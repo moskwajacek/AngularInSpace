@@ -1,0 +1,22 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
+  <div class="row">
+    <label class="col-2">Statek:</label>
+    <div class="col-10">
+      <select #shipIndex="ngModel" name="shipIndex" ngModel required>
+        <option value="">Wybierz statek</option>
+        <option *ngFor="let ship of ships$ | async; index as i"
+                [value]="i">
+          {{i+1}}. {{ship.modelName}}
+        </option>
+      </select>
+      <div class="error" *ngIf="shipIndex.hasError('required') && shipIndex.touched">musi być wypełnione</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-10">
+      <button type="submit" [disabled]="form.invalid">Utylizuj</button>
+    </div>
+  </div>
+</form>

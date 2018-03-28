@@ -1,0 +1,14 @@
+:host {
+    display: inline-block;
+    text-align: center;
+}
+
+img {
+    max-width: 60px;
+    border-radius: 5px;
+}
+
+h4 {
+    margin-top: 0;
+    color: red;
+}

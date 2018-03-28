@@ -1,0 +1,40 @@
+<form *ngIf="pilot" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h2>{{pilot.id ? 'Edycja pilota' : 'Dodawanie pilota'}}</h2>
+        <div class="row">
+          <div class="col-8">
+            <div class="row">
+              <label class="col-4">Imię:</label>
+              <div class="col-8">
+                <input type="text" formControlName="firstName" />
+                <span class="error" *ngIf="form.get('firstName').hasError('required') && form.get('firstName').touched">jest wymagane</span>
+              </div>
+            </div>
+            <div class="row">
+              <label class="col-4">Nazwisko:</label>
+              <div class="col-8">
+                <input type="text" formControlName="lastName"/>
+              </div>
+            </div>
+            <div class="row">
+              <label class="col-4">URL do avataru:</label>
+              <div class="col-8">
+                <input type="text" formControlName="imageUrl"/>
+              </div>
+            </div>
+            <div class="row">
+              <label class="col-4"></label>
+              <div class="col-8">
+                <button type="button" routerLink="/">Anuluj</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="avatar-preview">
+              <img #avatar
+                   (error)="avatar.src = defaultAvatarUrl"
+                   [src]="form.get('imageUrl').value || defaultAvatarUrl"/>
+            </div>
+            <button type="submit" [disabled]="form.invalid">Zapisz</button>
+          </div>
+        </div>
+      </form>

@@ -1,0 +1,41 @@
+
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)" novalidate>
+  <div class="row">
+    <label class="col-2">Typ:</label>
+    <div class="col-10">
+      <label>
+        <input type="radio" name="shipType" [value]="availableTypes.Fighter" [ngModel]="initialShipType" required/>
+        Myśliwiec
+      </label>
+      <label>
+        <input type="radio" name="shipType" [value]="availableTypes.Bomber" [ngModel]="initialShipType" required/>
+        Bombowiec
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <label class="col-2">Ilość:</label>
+    <div class="col-10">
+      <input #shipCountInput="ngModel"
+             [ngModel]="initialShipCount"
+             type="number"
+             name="shipCount"
+             required
+             pattern="[1-5]"/>
+      <div class="error" *ngIf="shipCountInput.hasError('required')">musi być wypełnione</div>
+      <div class="error" *ngIf="shipCountInput.hasError('pattern')">musi mieć wartość między 1 - 5</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-10">
+      <button type="submit" [disabled]="form.invalid || isProducing">Produkuj</button>
+      <span class="info" *ngIf="isProducing">Trwa produkcja...</span>
+    </div>
+  </div>
+
+</form>
+<p>Aktualna ilość statków w hangarze: {{shipsCount$ | async}}</p>

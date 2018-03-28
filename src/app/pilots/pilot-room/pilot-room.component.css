@@ -1,0 +1,11 @@
+app-pilot {
+    margin: 10px;
+    padding: 16px;
+}
+
+app-pilot.selected {
+    border: 2px red solid;
+    padding: 14px;
+    border-radius: 10px;
+}
+

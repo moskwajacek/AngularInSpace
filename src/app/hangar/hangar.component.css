@@ -1,0 +1,27 @@
+:host {
+    border: 3px rgb(9, 7, 139) solid;
+    border-radius: 15px;
+    display: block;
+    margin: 50px;
+    padding: 20px;
+    overflow-y: scroll;
+    width: calc(100% - 140px);
+    height: calc(100% - 140px);
+}
+
+h2 {
+    color: rgb(235, 129, 8);
+    text-align: center;
+}
+.engineers-header > * {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.engineers-header a {
+    color: #ffffff;
+}
+
+.engineers-header a.active {
+    color: #FF0000;
+}

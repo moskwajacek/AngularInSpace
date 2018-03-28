@@ -1,0 +1,28 @@
+{
+  "pilots": [
+    {
+      "id": 1,
+      "firstName": "Lee",
+      "lastName": "Adama",
+      "imageUrl": "/assets/face1.png"
+    },
+    {
+      "id": 2,
+      "firstName": "Jacek",
+      "lastName": "Moskwa",
+      "imageUrl": "/assets/face2.png"
+    },
+    {
+      "id": 3,
+      "firstName": "Szymon",
+      "lastName": "Tarawneh",
+      "imageUrl": "/assets/face3.png"
+    },
+    {
+      "id": 4,
+      "firstName": "Ktos",
+      "lastName": "Tam",
+      "imageUrl": "/assets/face4.png"
+    }
+  ]
+}
